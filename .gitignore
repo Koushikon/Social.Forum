@@ -1,0 +1,6 @@
+.env
+node_modules/
+uploads/*.jpg
+uploads/*.jpeg
+*.txt
+*.bat

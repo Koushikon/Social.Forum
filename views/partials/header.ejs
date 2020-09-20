@@ -1,0 +1,58 @@
+<header class="header">
+    <!-- Back Layers -->
+    <div class="open">
+        <div class="open__layer"></div>
+    </div>
+
+    <div class="back">
+        <div class="back__triangle"></div>
+        <div class="back__text">
+            <h1><%= watermark %></h1>
+        </div>
+        <div class="back__red"></div>
+    </div>
+
+    <!-- Menubar -->
+    <div class="menubar">
+        <nav class="menu menu-adjust">
+            <div class="menu__brand">
+                <img src="/img/logo1.png" alt="Brand Logo" title="The Brand Logo">
+            </div>
+
+            <div class="menu__pages" id="navbarNav">
+                <ul class="menus">
+                    <% if(user){ %>
+                        <li class="menus__item">
+                            <a class="only-item <%= url_1 %>" href="/"><%= user.username %></a>
+                        </li>
+                        <li class="menus__item">
+                            <a class="only-item" href="/dashboard">Dashboard</a>
+                        </li>
+                        <li class="menus__item">
+                            <a class="only-item" href="/chat/room-enter">Chat Room</a>
+                        </li>
+                        <li class="menus__item">
+                            <a class="only-item" href="/chat">Messaging</a>
+                        </li>
+                    <% } else{ %>
+                        <li class="menus__item">
+                            <a class="only-item <%= url_1 %>" href="/">Home</a>
+                        </li>
+                        <li class="menus__item">
+                            <a class="only-item" href="/user/login">Login</a>
+                        </li>
+                    <% } %>
+                    <li class="menus__item">
+                        <a class="only-item <%= url_4 %>" href="/help">Help</a>
+                    </li>
+                    <li class="menus__item">
+                        <a class="only-item <%= url_3 %>" href="/technologies">Technologies</a>
+                    </li>
+                    <li class="menus__item">
+                        <a class="only-item <%= url_2 %>" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

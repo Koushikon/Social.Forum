@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- Author Meta -->
+    <meta name="author" content="Koushik">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- Title Logo Set -->
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png">
+    <!-- Site Title Set -->
+    <title>Aroot User | About</title>
+
+    <!-- Custom CSS Add -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Font Awesome CSS Add -->
+    <link rel="stylesheet" href="/css/all.min.css">
+</head>
+
+<body>
+    <!-- Full Header -->
+    <%- include('partials/header') %>
+
+    <div class="boxes">
+        <div class="info_1 info--instructor">
+            <div class="super-box">
+                <div class="container_Info">
+                    <div class="box box--instructor">
+                        <div class="icon_bg"></div>
+                    </div>
+                    <div class="icon">
+                        <img src="/img/Instractor.jpg" alt="Instructor">
+                    </div>
+                </div>
+
+                <div class="text">
+                    <p class="title">
+                        | Guide
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="info_1 info--creator">
+            <div class="super-box">
+                <div class="container_Info">
+                    <div class="box box--creator">
+                        <div class="icon_bg"></div>
+                    </div>
+                    <div class="icon">
+                        <img src="/img/Creator.jpg" alt="creator">
+                    </div>
+                </div>
+
+                <div class="text">
+                    <p class="title">
+                        | Developer
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="info_1 info--team">
+            <div class="super-box">
+                <div class="container_Info">
+                    <div class="box box--team">
+                        <div class="icon_bg"></div>
+                    </div>
+                    <div class="icon">
+                        <img src="/img/firends.jpg" alt="Instructor">
+                    </div>
+                </div>
+
+                <div class="text">
+                    <p class="title">
+                        | Friends who Helped
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="contact_info">
+            <div class="container_contact">
+                <form id="contact" action="/contact" method="POST">
+                    <h3>Contact Us</h3>
+                    <h4>Write your thought about it</h4>
+                    <fieldset>
+                        <input title="Write your full name" name="the_name" placeholder="Your name" type="text" maxlength="40" tabindex="1" required />
+                    </fieldset>
+                    <fieldset>
+                        <input title="Write your valid email_id" name="email_id" placeholder="Your Email Address" type="email" tabindex="2" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required />
+                    </fieldset>
+                    <fieldset>
+                        <input title="Write your phone numbers, It must be Number" name="phone_no" placeholder="Your Phone Number (optional)" type="tel" maxlength="10" tabindex="3" pattern="^\d{10}$" />
+                    </fieldset>
+                    <fieldset>
+                        <textarea title="Write your thought here" name="the_msg" placeholder="Type your message here...." maxlength="500" tabindex="4" required ></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <button name="submit" type="submit" id="contact-submit">Send</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

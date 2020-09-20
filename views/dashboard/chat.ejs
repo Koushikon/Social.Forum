@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta character set -->
+    <meta charset="UTF-8" />
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!-- Author Meta -->
+    <meta name="author" content="Koushik" />
+    <!-- Meta Description -->
+    <meta name="description" content="" />
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="" />
+    <!-- Title Logo Set -->
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+    <!-- Site Title Set -->
+    <title>Aroot User | Chat. </title>
+
+    <!-- Custom CSS Add -->
+    <link rel="stylesheet" href="/css/dashboard/chat.css" />
+    <link rel="stylesheet" href="/css/dashboard/popup-menu.css" />
+
+    <!-- Font Awesome 5.12.1 CSS Add -->
+    <link rel="stylesheet" href="/css/all.min.css" />
+
+    <!-- JQuery v3.4.1 -->
+    <script src="/js/dependencies/jquery-3.4.1.min.js"></script>
+
+    <!-- bootstrap v4.4.1-dist -->
+    <link rel="stylesheet" href="/css/dependencies/bootstrap.min.css">
+    <script src="/js/dependencies/bootstrap.min.js"></script>
+</head>
+
+<body>
+    
+    <div class="open">
+        <span class="cls"></span>
+        <span>
+            <ul class="sub-menu ">
+                <li>
+                    <a href="/" title="Yo Home">Aroot User | Home</a>
+                </li>
+                <li>
+                    <a href="/dashboard" onclick="window.close();" title="Go To Dashboard">Aroot User | Dashboard</a>
+                </li>
+                <li>
+                    <a href="/notes" target="_blank" title="Go To Notes">Aroot User | Notes</a>
+                </li>
+                <li>
+                    <a href="/user/logout" title="Now Logout">Aroot User | Sign out</a>
+                </li>
+            </ul>
+        </span>
+        <span class="cls"></span>
+    </div>
+    <div class="inbox_msg">
+        <input type="hidden" id="user" value="<%= user.username %>" />
+        <div class="inbox_people">
+            <div class="headind">
+                <h4 title="Room Name">
+                    Global & Pvt.
+                    <span>Hii, <%= user.username %> | On <span id="totalOnline">0</span><br /></span>
+                    <span title="Private Messaging section">| Connect to:</span>
+                    <span id="frndName" title="Whom you connect with"> </span>
+                    <span id="typing" title="is typing or not"></span>
+                </h4>
+            </div>
+            <ul id="list" class="inbox_chat">
+                <!-- Users List render here -->
+            </ul>
+        </div>
+        <div class="mesgs">
+            <div id="scrl2">
+                <p class="no_chat" id="noChat"> No 😁 More Chats To Display..., So lets start now </p>
+                <p class="first_see" id="initMsg"> 😁 Click On User Or Group To Start Messaging 😁 </p>
+                <div id="messages">
+                    <!-- All incoming and outgoing messages render here -->
+                </div>
+            </div>
+            <div class="mesgs type_msg">
+                <form id="chatForm" action="#" method="POST">
+                    <input id="myMsg" type="text" name="message" class="write_msg" placeholder="Type a message"
+                        autocomplete="off" autofocus required />
+                    <button id="sendBtn" class="msg_send_btn" type="submit">
+                        <i class="fab fa-telegram-plane" aria-hidden="true"></i>
+                    </button>
+                </form>
+                <button id="emoji" class="emoji_send_btn">
+                    <i class="fas fa-smile-wink" aria-hidden="true"></i>
+                </button>
+                <button id="send-location" class="loc_send_btn" type="button">
+                    <i class="fas fa-compass" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client side chat file -->
+    <script src="/js/scriptForChat.js"></script>
+
+    <!-- v2.24.0 To load out all data from database -->
+    <script src="/js/dependencies/moment.min.js"></script>
+
+    <!-- Socket.io v2.3.0 CDN File -->
+    <script src="/socket.io/socket.io.js"></script>
+</body>
+
+</html>

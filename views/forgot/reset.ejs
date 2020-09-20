@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta character set -->
+    <meta charset="UTF-8" />
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!-- Author Meta -->
+    <meta name="author" content="Koushik" />
+    <!-- Meta Description -->
+    <meta name="description" content="" />
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="" />
+    <!-- Title Logo Set -->
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+    <!-- Site Title Set -->
+    <title>Aroot User | LOGIN</title>
+
+    <!-- Custom CSS Add -->
+    <link rel="stylesheet" href="/css/style.css" />
+    
+    <!-- Font Awesome CSS Add -->
+    <link rel="stylesheet" href="/css/all.min.css" />
+</head>
+<body>
+    <!-- Full Header -->
+    <header class="header">
+        <!-- Back Layers -->
+        <div class="open">
+            <div class="open__layer"></div>
+        </div>
+
+        <div class="back">
+            <div class="back__triangle"></div>
+        </div>
+    </header>
+    <div class="menu__brand">
+        <img src="/img/logo1.png" alt="Brand Logo" title="The Brand Logo">
+    </div>
+
+    <!-- <section class="login-section"> -->
+    <div class="login--content pass-content">
+        <div class="agile_info">
+            <!-- Content -->
+            <div class="w3_info">
+                <h2>Change Password</h2>
+                <form name="login-form" action="/user/reset/<%= token %>" method="POST">
+                    <div class="left">
+                        <label id="passLabel">New Password</label>
+                        <div class="input-group"
+                            title=" It's Password, It Must be at least one Lowercase, Uppercase, Number in between 8 to 15 character || No special character allowed || Space not be counted">
+                            <span><i id="pass-strength" class="fa fa-lock" aria-hidden="true"></i></span>
+                            <input type="password" name="password" placeholder="abc XYZ 701" class="user-pass"
+                                id="u-pass" autocomplete="new-password" minlength="8" maxlength="15"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}" required />
+                        </div>
+                    </div>
+                    <div class="left">
+                        <label id="labelConfirm">Confirm Password</label>
+                        <div class="input-group" title="Same as password">
+                            <span>
+                                <i id="pass-eye" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
+                            </span>
+                            <input type="password" name="confirm" placeholder="abc XYZ 701" class="user-pass"
+                                id="u-pass-confirm" autocomplete="new-password" minlength="8" maxlength="15"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}" autocomplete="off" required />
+                        </div>
+                    </div>
+                    <button class="btn-form btn-danger btn-block" type="submit" name="sumbit">
+                        Update Password
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="w3l_form">
+                <div class="left_grid_info">
+                    <h3>Registered?</h3>
+                    <br />
+                    <p class="text">
+                        So, Here You Can Update Your Password, This Link Will Not Work After Certain Period Of Time.
+                    </p>
+                    <a href="/user/signup" class="btn-form btn-with-1">Back-to SignUp<i class="fas fa-chevron-right"
+                            aria-hidden="true"></i></a>
+                    <a href="/" class="btn-form btn-with-2">Back-to Home
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

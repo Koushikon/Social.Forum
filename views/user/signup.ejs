@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta character set -->
+    <meta charset="UTF-8" />
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!-- Author Meta -->
+    <meta name="author" content="Koushik" />
+    <!-- Meta Description -->
+    <meta name="description" content="" />
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="" />
+    <!-- Title Logo Set -->
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+    <!-- Site Title Set -->
+    <title>Aroot User | SIGN UP</title>
+
+    <!-- Custom CSS Add -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- Font Awesome CSS Add -->
+    <link rel="stylesheet" href="/css/all.min.css" />
+
+    <!-- JQuery v3.4.1 -->
+    <script src="/js/dependencies/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="open">
+            <div class="open__layer"></div>
+        </div>
+
+        <div class="back">
+            <div class="back__triangle"></div>
+        </div>
+    </header>
+
+    <div class="menu__brand">
+        <img src="/img/logo1.png" alt="Brand Logo" title="The Brand Logo">
+    </div>
+    <!-- Sign Up Open -->
+    <div class="signup--content">
+        <div class="agile_info">
+            <div class="w3_info">
+                <h2>Signup Here</h2>
+                <form name="signup-form" action="/user/signup" autocomplete="off" method="POST">
+                    <div class="left margin">
+                        <label>Full Name</label>
+                        <div class="input-group" title="It's Full name, It must be under 50 character">
+                            <span><i class="fas fa-user-tie" aria-hidden="true"></i></span>
+                            <input type="text" name="fullname" placeholder="Full Name" class="name" id="fName"
+                                onInput="edValueKeyPress()" maxlength="40" autocomplete="off" autofocus />
+                        </div>
+                    </div>
+                    <div class="left">
+                        <label>About You</label>
+                        <div class="input-group"
+                            title="It's About Info and it must be provided and must be under 30 character">
+                            <span><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+                            <input type="text" name="infos" placeholder="About Yourself (Optional)" class="info-s" id="infos" maxlength="70"
+                                autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="left margin">
+                        <label id="mailText">Email Address</label>
+                        <div class="input-group"
+                            title="It's Email_id, It must be this type like - abc@xyz.com || Space not be counted">
+                            <span><i id="mailIcon" class="fas fa-envelope-open" aria-hidden="true"
+                                    onclick="resetEmail(email)"></i></span>
+                            <input type="email" placeholder="abc.d-e@gmail.com" name="email" class="email-id" id="email"
+                                autocomplete="nope" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                                onchange="validateEmail(email)" required />
+                            <i id="email-check" class=""></i>
+                        </div>
+                    </div>
+                    <div class="left">
+                        <label id="unameText">User Name</label>
+                        <div class="input-group"
+                            title="It's User Name, It must be unique and must be between 8 to 40 character || Space not be counted">
+                            <span>
+                                <i id="unameIcon" class="fas fa-user-shield" aria-hidden="true" onclick="resetUName(uname)"></i>
+                            </span>
+                            <input type="text" name="username" placeholder="abcd 700" class="user-name" id="uname"
+                                autocomplete="off" pattern="\S+" minlength="8" maxlength="40" onkeypress="return AvoidSpace(event)"
+                                required />
+                            <!-- <i id="phone-check" class=""></i> -->
+                        </div>
+                    </div>
+                    <div class="left margin">
+                        <label id="passLabel">Password</label>
+                        <div class="input-group"
+                            title=" It's Password, It Must be at least one Lowercase, Uppercase, Number in between 8 to 15 character || No special character allowed || Space not be counted">
+                            <span><i id="pass-strength" class="fa fa-lock" aria-hidden="true"></i></span>
+                            <input type="password" name="password" placeholder="abc XYZ 701" class="user-pass"
+                                id="u-pass" autocomplete="new-password" minlength="8" maxlength="15"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}" required />
+                        </div>
+                    </div>
+                    <div class="left">
+                        <label id="labelConfirm">Confirm Password</label>
+                        <div class="input-group" title="Same as password">
+                            <span>
+                                <i id="pass-eye" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
+                            </span>
+                            <input type="password" placeholder="abc XYZ 701" class="user-pass"
+                                id="u-pass-confirm" autocomplete="new-password" minlength="8" maxlength="15"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}" autocomplete="off" required />
+                        </div>
+                    </div>
+                    <button class="btn-form btn-danger btn-block" type="submit" name="sumbit">
+                        Signup Now <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="w3l_form">
+                <div class="left_grid_info">
+                    <h3>Already Registered?</h3>
+                    <br />
+                    <p class="register-text">
+                        | So, Here You Can Signup Simply With Email Or Signup With Google Facebook Account And These Need Special Permission To Accounts
+                    </p>
+                    <a href="/user/login" class="btn-form btn-with-1">LOGIN
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="btn-form btn-with-2">Google
+                        <i class="fab fa-google" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="btn-form btn-with-3">Facebook
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popup Close Button -->
+        <a class="popup-close" href="/">
+            <button class="ebook-cls-btn">X</button>
+        </a>
+    </div>
+
+    <!-- Custom JS Files -->
+    <script src="/js/scriptForSignup.js"></script>
+    <script src="/js/script.js"></script>
+
+    <!-- v2.24.0 To load out all data from database -->
+    <script src="/js/dependencies/moment.min.js"></script>
+
+    <!-- Socket.io v2.3.0 CDN File -->
+    <script src="/js/dependencies/socket.io.js"></script>
+</body>
+
+</html>

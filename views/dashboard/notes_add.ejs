@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <!-- meta character set -->
+    <meta charset="UTF-8" />
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!-- Author Meta -->
+    <meta name="author" content="Koushik" />
+    <!-- Meta Description -->
+    <meta name="description" content="" />
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="" />
+    <!-- Title Logo Set -->
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+    <!-- Site Title Set -->
+    <title><%= title %></title>
+
+    <!-- Custom CSS Add -->
+    <link rel="stylesheet" type="text/css" href="/css/dependencies/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/dashboard/notes.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+
+    <!-- Font Awesome CSS Add -->
+    <link rel="stylesheet" href="/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Full Header -->
+    <header class="header">
+        <div class="open">
+            <div class="open__layer"></div>
+        </div>
+
+        <div class="back">
+            <div class="back__triangle"></div>
+        </div>
+    </header>
+
+    <div class="container form-container">
+        <form method="POST" class="card">
+            <div class="field column">
+                <div class="control">
+                    <select class="input" name="privacy" id="" tabindex="1" required>
+                        <option value="" selected style="display: none;">Set Privacy</option>
+                        <option value="Public" style="background-color: #9c59b66e;">Public</option>
+                        <option value="Private" style="background-color: #27ae5f6c;">Private</option>
+                    </select>
+                </div><br />
+                <label class="label is-small">Title</label>
+                <div class="control">
+                    <input class="input title" placeholder="Title" name="title" tabindex="2" required />
+                </div>
+                <label class="label is-small">Sub Title</label>
+                <div class="control">
+                    <input class="input sub-title" placeholder="Sub_title (Optional)" name="subtitle" tabindex="3" />
+                </div>
+            </div>
+
+            <div class="field column">
+                <label class="label is-small">Notes</label>
+                <div class="control">
+                    <textarea class="textarea note" placeholder="Notes..." name="description" tabindex="4" rows="5" required ></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="button">Add Note</button>
+            <a href="/notes" class="button is-outlined is-primary is-pulled-right">View List</a>
+        </form>
+    </div>
+</body>
+
+</html>

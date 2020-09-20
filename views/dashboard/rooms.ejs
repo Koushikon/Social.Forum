@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- meta character set -->
+    <meta charset="UTF-8" />
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!-- Author Meta -->
+    <meta name="author" content="Koushik" />
+    <!-- Meta Description -->
+    <meta name="description" content="" />
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="" />
+    <!-- Title Logo Set -->
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+    <!-- Site Title Set -->
+    <title>Aroot User | Room</title>
+
+    <!-- Custom CSS Add -->
+    <link rel="stylesheet" href="/css/dashboard/rooms.css" />
+    <link rel="stylesheet" href="/css/dashboard/popup-menu.css" />
+    <!-- JQuery v3.4.1 -->
+    <script src="/js/dependencies/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class="open">
+        <span class="cls"></span>
+        <span>
+            <ul class="sub-menu">
+                <li>
+                    <a href="/" title="Yo Home">Aroot User | Home</a>
+                </li>
+                <li>
+                    <a href="/dashboard" onclick="window.close();" title="Go To Dashboard">Aroot User | Dashboard</a>
+                </li>
+                <li>
+                    <a href="/notes" target="_blank" title="Go To Notes">Aroot User | Notes</a>
+                </li>
+                <li>
+                    <a href="/user/logout" title="Now Logout">Aroot User | Sign out</a>
+                </li>
+            </ul>
+        </span>
+        <span class="cls"></span>
+    </div>
+
+    <div class="chat">
+        <div id="sidebar" class="chat__sidebar"></div>
+        <div class="chat__main">
+            <div id="messages" class="chat__messages"></div>
+
+            <div class="compose">
+                <form id="message-form">
+                    <input name="message" placeholder="Message" required autocomplete="off" />
+                    <button>Send</button>
+                </form>
+                <button id="send-location">Send location</button>
+            </div>
+        </div>
+    </div>
+
+    <script id="message-template" type="text/html">
+      <div class="message message_left">
+          <p>
+              <span class="message__name">{{username}}</span>
+              <span class="message__meta">{{createdAt}}</span>
+          </p>
+          <p>{{message}}</p>
+      </div>
+    </script>
+
+    <script id="location-message-template" type="text/html">
+      <div class="message">
+          <p>
+              <span class="message__name">{{username}}</span>
+              <span class="message__meta">{{createdAt}}</span>
+          </p>
+          <p><a href="{{url}}" target="_blank">Current location</a></p>
+      </div>
+    </script>
+
+    <script id="sidebar-template" type="text/html">
+      <h3 class="room-title">Room: {{room}}</h2>
+      <h3 class="list-title">Users</h3>
+      <div id="users"></div>
+      <ul class="users">
+          {{#users}}
+              <li class="user">{{username}}</li>
+          {{/users}}
+      </ul>
+    </script>
+
+    <!-- v6.9.4 qs mis js to Parse our Query String. -->
+    <script src="/js/dependencies/qs.min.js"></script>
+    <!-- v3.1.0 Mustache min js file to sort out date, time etc. -->
+    <script src="/js/dependencies/mustache.min.js"></script>
+    <!-- Client side rooms file -->
+    <script src="/js/scriptForRooms.js"></script>
+    <!-- v2.24.0 To load out all data from database -->
+    <script src="/js/dependencies/moment.min.js"></script>
+    <!-- Socket.io v2.3.0 CDN File -->
+    <script src="/js/dependencies/socket.io.js"></script>
+</body>
+
+</html>

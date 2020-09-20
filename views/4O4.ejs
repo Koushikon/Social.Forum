@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta character set -->
+  <meta charset="UTF-8" />
+  <!-- Mobile Specific Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <!-- Author Meta -->
+  <meta name="author" content="Koushik" />
+  <!-- Meta Description -->
+  <meta name="description" content="" />
+  <!-- Meta Keyword -->
+  <meta name="keywords" content="" />
+  <!--  -->
+  <meta http-equiv = "refresh" content = "3; url = <%= redirect %>" />
+  <!-- Title Logo Set -->
+  <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+  <!-- Site Title Set -->
+  <title>ARoot User | <%= title %></title>
+
+  <!-- Custom CSS Add -->
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Font Awesome CSS Add -->
+  <link rel="stylesheet" href="/css/all.min.css" />
+
+  <!-- Inline CSS for that file -->
+  <style>
+    
+  </style>
+</head>
+
+<body>
+  <div class="contain">
+    <!-- Full Header -->
+    <%- include('partials/header') %>
+
+    <section class="error-page">
+      <div>
+        <h1 data-h1="<%= status %>"><%= status %></h1>
+        <h3 data-h1="<%= error %>"></h3>
+      </div>
+    </section>
+
+    <!-- Footer Part -->
+    <%- include('partials/footer') %>
+  </div>
+</body>
+
+</html>

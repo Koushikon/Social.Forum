@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta character set -->
+  <meta charset="UTF-8" />
+  <!-- Mobile Specific Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <!-- Author Meta -->
+  <meta name="author" content="Koushik" />
+  <!-- Meta Description -->
+  <meta name="description" content="" />
+  <!-- Meta Keyword -->
+  <meta name="keywords" content="" />
+  <!-- Title Logo Set -->
+  <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+  <!-- Site Title Set -->
+  <title>Aroot User | BE SOCIAL</title>
+
+  <!-- Custom CSS Add -->
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Font Awesome CSS Add -->
+  <link rel="stylesheet" href="/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Full Header -->
+  <%- include('partials/header') %>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="row-fst">
+      <div class="fst-div main__divs main-footer">
+        <div class="main--text">
+          <h1>SOCIALIZE<br />PEOPLE</h1>
+          <p>
+            <% if(user) { %>
+              <b>Hello,</b> <%= user.fullname %> &nbsp;| TO BUILD SOCIAL RELATIONSHIP WITH OTHER PEOPLE WHO
+              SHARE SIMILAR PERSONALITY OR CAREER, INTERESTS, ACTIVITIES &amp;
+              REAL-LIFE CONNECTIONS.
+            <% } else { %>
+              <b>ARoot User</b> | TO BUILD SOCIAL RELATIONSHIP WITH OTHER PEOPLE WHO
+              SHARE SIMILAR PERSONALITY OR CAREER, INTERESTS, ACTIVITIES &amp;
+              REAL-LIFE CONNECTIONS.
+            <% } %>
+          </p>
+          <% if(user){ %>
+            <!-- Nice to meet you -->
+            <div class="btn--cross btn--signup" id="button-5" style="visibility: hidden;"></div>
+          <% } else{ %>
+            <div class="btn--cross btn--signup" id="button-5">
+              <div id="translate"></div>
+              <a class="cross__link" href="/user/signup">Sign Up | Login</a>
+            </div>
+          <% } %>
+          
+          <div class="clock-black">
+            <!-- Clock Part -->
+            <%- include('partials/clock') %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bubble Part -->
+    <ul class="w3lsg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </main>
+
+  <!-- Footer Part -->
+  <%- include('partials/footer') %>
+
+  <!-- Protect From Right -->
+  <script language="JavaScript"> document.addEventListener("contextmenu", function(e){ e.preventDefault(); }, false); </script>
+</body>
+
+</html>

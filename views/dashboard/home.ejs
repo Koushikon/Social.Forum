@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<!-- meta character set -->
+	<meta charset="UTF-8" />
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+	<!-- Author Meta -->
+	<meta name="author" content="Koushik" />
+	<!-- Meta Description -->
+	<meta name="description" content="" />
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="" />
+	<!-- Title Logo Set -->
+	<link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+	<!-- Site Title Set -->
+	<title>Aroot User | DASHBOARD</title>
+
+	<!-- Custom CSS Add -->
+	<link rel="stylesheet" type="text/css" href="/css/dashboard/dashboard.css" />
+	<link rel="stylesheet" type="text/css" href="/css/dashboard/component.css" />
+
+	<!-- Custom Javascript Add -->
+	<script src="/js/dependencies/modernizr-custom.js"></script>
+	<script src="/js/script.js"></script>
+
+	<!-- Font Awesome CSS Add -->
+	<link rel="stylesheet" href="/css/all.min.css" />
+</head>
+
+<body>
+	<!-- Navigation -->
+	<nav class="pages-nav">
+		<div class="pages-nav__item">
+			<a class="link link--page" href="#page-dashboard">Really! Home</a>
+		</div>
+		<div class="pages-nav__item">
+			<a class="link link--page" href="#page-edit-profile">Edit? Profile</a>
+		</div>
+		<div class="pages-nav__item">
+			<a class="link link--page" href="#page-profile">Yo's Profile</a>
+		</div>
+
+		<div class="pages-nav__item pages-nav__item--small">
+			<a class="link link--page link--faded" href="#user-profile">🤞 Other's Profile!</a>
+		</div>
+		<div class="pages-nav__item pages-nav__item--small">
+			<a class="link link--page link--faded" href="#user-passw">☝ Set Password!</a>
+		</div>
+		<div class="pages-nav__item pages-nav__item--small">
+			<a class="link link--page link--faded" href="#page-feedback">👌 Feedback!</a>
+		</div>
+
+		<div class="pages-nav__item pages-nav__item--social">
+			<a target="_blank" class="link link--social link--faded" href="/chat">
+				<i class="fas fa-comment-dots" title="Messaging"></i>
+			</a>
+
+			<a target="_blank" class="link link--social link--faded" href="/chat/room-enter">
+				<i class="fas fa-comment-medical" title="Chat Room"></i>
+			</a>
+
+			<a target="_blank" class="link link--social link--faded" href="https://www.facebook.com/Rootsharmi/">
+				<i class="fab fa-facebook-f" title="Facebook"></i>
+			</a>
+
+			<a target="_blank" class="link link--social link--faded" href="https://github.com/Koushikask/">
+				<i class="fab fa-github" title="GitHub"></i>
+			</a>
+
+			<a target="_blank" class="link link--social link--faded" href="https://twitter.com/rootsharmi/">
+				<i class="fab fa-twitter" title="Twittter"></i>
+			</a>
+
+			<a target="_blank" class="link link--social link--faded" href="https://www.youtube.com/c/arootuser">
+				<i class="fab fa-youtube" title="YouTube"></i>
+			</a>
+
+			<a target="_blank" class="link link--social link--faded"
+				href="https://stackoverflow.com/users/11916918/koushikask/">
+				<i class="fab fa-stack-overflow" title="Stack Overflow"></i>
+			</a>
+
+			<a target="_blank" class="link link--social link--faded" href="/notes">
+				<i class="fas fa-sticky-note" title="Notes"></i>
+			</a>
+		</div>
+	</nav>
+
+	<!-- Pages stack -->
+	<div class="pages-stack">
+		<!-- Dashboard Page Start -->
+
+		<div class="page" id="page-dashboard">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Really! Home</h1>
+				<p class="bp-header__desc">
+					Click This Link, Here you sent messages Privately all the users who created their Account in our Website. Also you can send Global messages and all the Private & Global messages will save on our databse.<br />
+					<a href="/chat" target="_blank" title="Go for Messaging">
+						Go for Messaging</a><br /><br />
+					Click This Link, Here you create Private or Public notes for you. But Public for everyone, anyone can see it's content.<br />
+					<a href="/notes" target="_blank" title="Go for Notes">
+						Go for Notes</a><br /><br />
+					Click This Link, Here you can Join other's room or create an unique room and invite other's and Here messages will not be saved. It's peer to peer messaging system. Those messages will disapear when you refresh the page.<br /><br />
+					<a href="/chat/room-enter" target="_blank" title="Go for Rooms">
+						Go for Rooms</a><br />
+					| The Name is: <%= user.fullname %>
+					<br />
+					| It's About: <%= user.infos %>
+					<br />
+				</p>
+
+				<nav class="bp-nav">
+					<a class="bp-nav__item bp-icon bp-icon--prev" href="/user/logout" data-info="Log out"></a>
+					<!-- <a class="bp-nav__item bp-icon bp-icon--next" href="#" data-info="Next"></a> -->
+					<a class="bp-nav__item bp-icon bp-icon--drop" href="/" data-info="Back to home"></a>
+					<!-- <a class="bp-nav__item bp-icon bp-icon--archive" href="/dashboard" data-info="User Dashboard"></a> -->
+				</nav>
+			</header>
+		</div>
+
+		<!-- Dashboard Page End & Edit Profile Start -->
+
+		<div class="page" id="page-edit-profile">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Edit? Profile</h1>
+				<p class="bp-header__desc">
+					Here you can edit and add such informations such as Name, Social
+					links, Age etc. | <%= user.fullname %>
+					<br /><br />
+					<a class="btn-index bp-icon bp-icon--drop" href="/" data-info="back to home"></a>
+					Edit profile details
+					<a class="btn-dashboard bp-icon bp-icon--archive" href="/dashboard" data-info="User Dashboard"></a>
+				</p>
+				<form action="/dashboard/profile" method="post" enctype="multipart/form-data">
+					<div class="left margin">
+						<label>Full Name</label>
+						<div class="input-group" title="It's Full name, It must be under 40 character">
+							<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" name="fullname" placeholder="Full Name" class="name" id="fNameU"
+								maxlength="40" value="<%= user.fullname %>" autocomplete="off" required />
+						</div>
+					</div>
+					<div class="left">
+						<label>Gender</label>
+						<div class="input-group" title="Gender must be in these three cateories">
+							<span><i class="fas fa-transgender-alt" aria-hidden="true"></i></span>
+							<select name="usergender" class="gender" id="u-gen" required>
+								<% if(user.usergender == ""){ %>
+								<option class="default" value="" disabled selected>G e n d e r</option>
+								<option class="gen" value="Male">Male</option>
+								<option class="gen" value="Female">Female</option>
+								<option class="gen" value="Others">Other's</option>
+								<% } else if (user.usergender == "Male") { %>
+								<option class="gen" value="Male" selected>Male</option>
+								<option class="gen" value="Female">Female</option>
+								<option class="gen" value="Others">Other's</option>
+								<% } else if (user.usergender == "Female") { %>
+								<option class="gen" value="Male">Male</option>
+								<option class="gen" value="Female" selected>Female</option>
+								<option class="gen" value="Others">Other's</option>
+								<% } else if (user.usergender == "Others") { %>
+								<option class="gen" value="Male">Male</option>
+								<option class="gen" value="Female">Female</option>
+								<option class="gen" value="Others" selected>Other's</option>
+								<% } %>
+							</select>
+						</div>
+					</div>
+					<div class="left margin">
+						<label>GitHub Link</label>
+						<div class="input-group"
+							title="It's your YouTube GitHub Link, So copy your link and paste it here">
+							<span><i class="fab fa-github" aria-hidden="true"></i></span>
+							<!-- https://github.com/Koushikask -->
+							<input type="url" name="github" id="url" placeholder="https://github.com" class="github"
+								value="<%= user.github %>" id="git-hub"
+								pattern="http(s)?:\/\/(www\.)?github\.com\/[A-z0-9_-]+\/?" required />
+						</div>
+					</div>
+					<div class="left">
+						<label>Info</label>
+						<div class="input-group"
+							title="It's About Info and it must be provided and must be under 30 character">
+							<span><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+							<input type="text" name="infos" placeholder="About Yourself" class="info-s" id="infos"
+								value="<%= user.infos %>" maxlength="70" autocomplete="off" required />
+						</div>
+					</div>
+					<div class="left margin">
+						<label>YouTube Link</label>
+						<div class="input-group"
+							title="It's your YouTube Profile Link, So copy your link and paste it here">
+							<span><i class="fab fa-youtube" aria-hidden="true"></i></span>
+							<!-- https://www.youtube.com/arootuser -->
+							<input type="url" name="youtube" id="url" placeholder="https://youtube.com" class="youtube"
+								value="<%= user.youtube %>" id="you-tube"
+								pattern="http(s)?:\/\/(www\.)?youtube\.com\/[A-z0-9_-]+\/?" required />
+						</div>
+					</div>
+					<div class="left">
+						<label>Date of Birth</label>
+						<div class="input-group"
+							title="Its Date of Birth, It is needed you have to choose date between \'1955-01-01\' to \'2002-12-31\'">
+							<span><i class="fas fa-calendar-week" aria-hidden="true"></i></span>
+							<input type="date" name="dateofbirth" class="dob" id="dOB" min="1955-01-01"
+								value="<%= user.dateofbirth %>" max="2002-12-31" required />
+						</div>
+					</div>
+					<div class="left margin">
+						<label>Profile Image</label>
+						<div class="input-group"
+							title="It's your Profile Picture, You have to pick only 'JPG', 'JPEG' & 'SVG' extention images within 1Mb">
+							<span><i class="fas fa-camera" aria-hidden="true"></i></span>
+							<input type="file" name="userImg" value="Upload Profile Image" />
+						</div>
+					</div>
+					<div class="left">
+						<button class="btn-form" type="submit">Update Details</button>
+					</div>
+				</form>
+			</header>
+		</div>
+
+		<!-- Edit Profile Page End & View Profile Start -->
+
+		<div class="page" id="page-profile">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Yo Profile</h1>
+				<p class="bp-header__desc">
+					Now see all informations related to your Account<br />
+					<a class="fas fa-home" href="/" title="Back to home"></a>
+					View profile details
+					<a class="bp-icon bp-icon--archive" href="/dashboard" title="User Dashboard"></a>
+				</p>
+				<div class="row">
+					<div class="col-1-of-2">
+						<p class="paragraph bp-header__desc">
+							Full Name ^_^ <%= user.fullname %><br />
+							Infos ^_^ <%= user.infos %><br />
+							Gender ^_^ <%= user.usergender %><br />
+							Date of Birth ^_^ <%= user.dateofbirth %> || Age ^_^ <%= user.age %>
+						</p>
+						<p class="paragraph bp-header__desc">
+							User_Name ^_^ <%= user.username %><br />
+							Email ^_^ <%= user.email %><br />
+							Updated ^_^ <%= user.updatedAt %><br />
+							Your Social Handles.
+							<a class="fab fa-github" target="_blank" href="<%= user.github %>"
+								title="Your GitHub page"></a>
+							<a class="fab fa-youtube" target="_blank" href="<%= user.youtube %>"
+								title="Your YouTube page"></a>
+						</p>
+					</div>
+					<div class="col-1-of-2">
+						<div class="composition">
+							<img src="/img/Eclipse.svg" alt="Photo 1" class="composition__photo_1" />
+							<img src="<%= user.userImg %>" alt="Photo 2" class="composition__photo" />
+						</div>
+					</div>
+				</div>
+			</header>
+		</div>
+
+		<!-- View Profile Page End & Change Password Start -->
+
+		<div class="page" id="user-passw">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">For Password Change</h1>
+				<p class="bp-header__desc">
+					Here you can change your Account_Password by typing old & new
+					password
+				</p>
+				<form action="/dashboard/changepass" method="POST">
+					<div class="left margin">
+						<label>Old Password</label>
+						<div class="input-group"
+							title=" It's Password, It Must be at least one Lowercase, Uppercase, Number in between 8 to 15 character || No special character allowed || Space not be counted">
+							<span><i id="pass-strength" class="fa fa-lock" aria-hidden="true"></i></span>
+							<input type="password" name="oldpassword" placeholder="Old Password" class="user-pass"
+								id="u-pass" autocomplete="off" minlength="8" maxlength="15"
+								pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}" required />
+						</div>
+					</div>
+					<div class="left margin">
+						<label>New Password</label>
+						<div class="input-group"
+							title=" It's Password, It Must be at least one Lowercase, Uppercase, Number in between 8 to 15 character || No special character allowed || Space not be counted">
+							<span><i id="pass-strength" class="fa fa-lock" aria-hidden="true"></i></span>
+							<input type="password" name="password" placeholder="New One" class="user-pass" id="u-pass"
+								autocomplete="new-password" minlength="8" maxlength="15"
+								pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}" required />
+						</div>
+					</div>
+					<div class="left">
+						<button class="btn-form" type="submit">Update Password</button>
+						<a href="#" onclick="removeAlert()" id="removeUser" type="button" class="btn-form">
+							Delete Account
+						</a>
+					</div>
+				</form>
+			</header>
+		</div>
+
+		<!-- Change Password Page End & View Other's Profile Start -->
+
+		<div class="page" id="user-profile">
+			<header class="bp-header cf">
+				<p class="bp-header__desc">
+					<h3>Here You can see other user's profile info and picture</h3>
+				</p>
+				<p class="bp-header__desc">
+					<a class="fas fa-home" href="/" title="Back to home"></a>
+					View profile details
+					<a class="bp-icon bp-icon--archive" href="/dashboard" title="User Dashboard"></a>
+				</p>
+				<div class="left margin">
+					<label>Gender</label>
+					<div class="input-group" title="Select Usersname whoose profile you want to visit">
+						<span><i class="fa fa-user" aria-hidden="true"></i></span>
+						<select name="oprofile" class="oprofile" required>
+							<option class="default" value="" disabled selected>S e l e c t &nbsp; U s e r</option>
+							<option class="user" value="one">one</option>
+							<option class="user" value="two">two</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-1-of-2">
+						<p class="paragraph bp-header__desc">
+							Full Name ^_^ <%=  %><br />
+							Infos ^_^ <%=  %><br />
+							Gender ^_^ <%=  %><br />
+							Date of Birth ^_^ <%=  %><br />
+							Age ^_^ <%=  %>
+						</p>
+						<p class="paragraph bp-header__desc">
+							User_Name ^_^ <%=  %><br />
+							Your Social Handles.
+							<a class="fab fa-github" target="_blank" href="<%=  %>" title="Your GitHub page"></a>
+							<a class="fab fa-youtube" target="_blank" href="<%=  %>" title="Your YouTube page"></a>
+						</p>
+					</div>
+					<div class="col-1-of-2">
+						<div class="composition">
+							<img src="/img/Eclipse.svg" alt="Photo 1" class="composition__photo_1" />
+							<img src="/img/user.svg" alt="Photo 2" class="composition__photo" />
+						</div>
+					</div>
+				</div>
+			</header>
+		</div>
+
+		<!-- -- Other's Profile Page End & -- Start -->
+	</div>
+	<!-- / pages-stack -->
+	<button id="menu" class="menu-button"><span></span></button>
+
+	<!-- Mouse Right Click Won't work -->
+	<script language="JavaScript">
+		document.addEventListener(
+			"contextmenu",
+			function (e) {
+				e.preventDefault();
+			},
+			false
+		);
+	</script>
+
+	<script src="./js/dependencies/classie.js"></script>
+	<script src="./js/dashboard/main.js"></script>
+</body>
+
+</html>

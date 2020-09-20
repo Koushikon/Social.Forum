@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <!-- meta character set -->
+    <meta charset="UTF-8" />
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!-- Author Meta -->
+    <meta name="author" content="Koushik" />
+    <!-- Meta Description -->
+    <meta name="description" content="" />
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="" />
+    <!-- Title Logo Set -->
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+    <!-- Site Title Set -->
+    <title><%= title %></title>
+
+    <!-- Custom CSS Add -->
+    <link rel="stylesheet" type="text/css" href="/css/dependencies/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/dashboard/notes.css" />
+    <link rel="stylesheet" href="/css/dashboard/popup-menu.css" />
+
+    <!-- Font Awesome CSS Add -->
+    <link rel="stylesheet" href="/css/all.min.css" />
+
+    <!-- JQuery v3.4.1 -->
+    <script src="/js/dependencies/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <iframe style="display: none;" src="https://www.youtube.com/embed/vl9npDZkQtI?rel=0&autoplay=1" allow="autoplay; encrypted-media;"></iframe>
+
+    <div class="open">
+        <span class="cls"></span>
+        <span>
+            <ul class="sub-menu ">
+                <li>
+                    <a href="/" title="Yo Home">Aroot User | Home</a>
+                </li>
+                <li>
+                    <a href="/dashboard" onclick="window.close();" title="Go To Dashboard">Aroot User | Dashboard</a>
+                </li>
+                <li>
+                    <a href="/chat" target="_blank" title="Go To Messaging">Aroot User | Messaging</a>
+                </li>
+                <li>
+                    <a href="/user/logout" title="Now Logout">Aroot User | Sign out</a>
+                </li>
+            </ul>
+        </span>
+        <span class="cls"></span>
+    </div>
+    
+    <section class="hero is-primary">
+        <div class="hero-body ">
+            <div class="container">
+                <h1 class="title">
+                    Notes List
+                </h1>
+            </div>
+        </div>
+    </section>
+    <div class="container card-container">
+        <div class="button-container">
+            <!--make this url dynamic like how django does.-->
+            <a href="/notes/add" class="button">Add New Note</a>
+        </div>
+        <% if (notes_list.length > 0 ) { %>
+            <% for (var i=0; i<notes_list.length; i++) { %>
+            <% if (notes_list[i].privacy == "Public" ) { %>
+                <div class="card pub_lic">
+                    <div class="card-content">
+                        <p class="title">
+                            <%= notes_list[i].title %>
+                        </p>
+                        <p class="author">
+                            by #<%= notes_list[i].author %>
+                        </p>
+                        <p class="subtitle"> &nbsp;
+                            <%= notes_list[i].subtitle %>
+                        </p>
+                        <pre class="description"><%= notes_list[i].description %></pre>
+                        <form action="/notes/delete" method="POST" class="is-pulled-right">
+                            <input type="hidden" value="<%= notes_list[i].id %>" name="noteId" />
+                            <button type="submit" class="button is-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            <% } else if (notes_list[i].author == user.username && notes_list[i].privacy == "Private" ) { %>
+                <div class="card pri_vate">
+                    <div class="card-content">
+                        <p class="title"> 
+                            <%= notes_list[i].title %>
+                        </p>
+                        <p class="author">
+                            by #<%= notes_list[i].author %>
+                        </p>
+                        <p class="subtitle"> &nbsp; 
+                            <%= notes_list[i].subtitle %>
+                        </p>
+                        <pre class="description"><%= notes_list[i].description %></pre>
+                        <form action="/notes/delete" method="POST" class="is-pulled-right">
+                            <input type="hidden" value="<%= notes_list[i].id %>" name="noteId" />
+                            <button type="submit" class="button is-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            <% } else { %>
+                <!-- <h2> Add a new note. No Other Note Exist</h2> -->
+            <% } %>
+
+            <% } %>
+        <% } else {%>
+            <h1> Add a new note. No Other Note Exist</h1>
+        <% }%>
+    </div>
+
+    <!--  -->
+    <script src="/js/dashboard/notes.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta character set -->
+    <meta charset="UTF-8" />
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!-- Author Meta -->
+    <meta name="author" content="Koushik" />
+    <!-- Meta Description -->
+    <meta name="description" content="" />
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="" />
+    <!-- Title Logo Set -->
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+    <!-- Site Title Set -->
+    <title>Aroot User | Room </title>
+    <!-- Custom CSS Add -->
+    <link rel="stylesheet" href="/css/dashboard/rooms.css">
+    <link rel="stylesheet" href="/css/dashboard/popup-menu.css" />
+    <!-- JQuery v3.4.1 -->
+    <script src="/js/dependencies/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class="open">
+        <span class="cls"></span>
+        <span>
+            <ul class="sub-menu">
+                <li>
+                    <a href="/" title="Yo Home">Aroot User | Home</a>
+                </li>
+                <li>
+                    <a href="/dashboard" onclick="window.close();" title="Go To Dashboard">Aroot User | Dashboard</a>
+                </li>
+                <li>
+                    <a href="/notes" target="_blank" title="Go To Notes">Aroot User | Notes</a>
+                </li>
+                <li>
+                    <a href="/user/logout" title="Now Logout">Aroot User | Sign out</a>
+                </li>
+            </ul>
+        </span>
+        <span class="cls"></span>
+    </div>
+
+    <div class="centered-form">
+        <div class="centered-form__box">
+            <h1 style="text-align: center;">New / Join Room</h1>
+            <form action="/chat/room-enter/room">
+                <input type="text" name="username" value="<%= user.username %>" placeholder="Display name" hidden
+                    readonly required />
+                <label>Room</label>
+                <input type="text" name="room" placeholder="Room" required />
+                <button>Join</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Protect From Right -->
+    <script language="JavaScript">
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        }, false);
+    </script>
+    <!-- Popup Menu JS -->
+    <script>
+        $(document).ready(function () {
+            $(document).delegate('.open', 'click', function (event) {
+                $(this).addClass('oppenned');
+                event.stopPropagation();
+            });
+
+            $(document).delegate('body', 'click', function (event) {
+                $('.open').removeClass('oppenned');
+            });
+
+            $(document).delegate('.cls', 'click', function (event) {
+                $('.open').removeClass('oppenned');
+                event.stopPropagation();
+            });
+        });
+    </script>
+</body>
+
+</html>

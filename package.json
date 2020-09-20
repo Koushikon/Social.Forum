@@ -1,0 +1,47 @@
+{
+  "name": "social.forum",
+  "version": "1.0.1",
+  "description": "The Social Forum App",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js -e js,ejs,css"
+  },
+  "keywords": [
+    "login",
+    "social_forum",
+    "network",
+    "private_messaging",
+    "group_messaging",
+    "notes",
+    "forget_account",
+    "update_profile",
+    "change_pass"
+  ],
+  "author": "Koushik Saha",
+  "license": "ISC",
+  "engines": {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.2.5",
+    "async": "^3.2.0",
+    "bad-words": "^3.0.3",
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "lodash": "^4.17.20",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.3",
+    "multer": "^1.4.2",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "npm-check-updates": "^8.1.1"
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta character set -->
+    <meta charset="UTF-8" />
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!-- Author Meta -->
+    <meta name="author" content="Koushik" />
+    <!-- Meta Description -->
+    <meta name="description" content="" />
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="" />
+    <!-- Title Logo Set -->
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+    <!-- Site Title Set -->
+    <title>Aroot User | LOGIN</title>
+
+    <!-- Custom CSS Add -->
+    <link rel="stylesheet" href="/css/style.css" />
+    
+    <!-- Font Awesome CSS Add -->
+    <link rel="stylesheet" href="/css/all.min.css" />
+</head>
+<body>
+    <!-- Full Header -->
+    <header class="header">
+        <!-- Back Layers -->
+        <div class="open">
+            <div class="open__layer"></div>
+        </div>
+
+        <div class="back">
+            <div class="back__triangle"></div>
+        </div>
+    </header>
+    <div class="menu__brand">
+        <img src="/img/logo1.png" alt="Brand Logo" title="The Brand Logo">
+    </div>
+
+    <!-- <section class="login-section"> -->
+    <div class="signup--content login--content">
+        <div class="agile_info">
+            <!-- Content -->
+            <div class="w3_info">
+                <h2>LOGIN Here</h2>
+                <form name="login-form" action="/user/login" method="POST">
+                    <div class="left">
+                        <label>Email Address</label>
+                        <div class="input-group" title="Email id must be this type like - abc@xyz.com">
+                            <span><i class="fas fa-envelope-open" aria-hidden="true"></i></span>
+                            <input type="email" placeholder="abc.d-e@gmail.com" name="email" class="email-id" id="email"
+                                autocomplete="off" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" autofocus
+                                required />
+                        </div>
+                    </div>
+                    <div class="left">
+                        <label id="passLabel">Password</label>
+                        <div class="input-group"
+                            title="Must contain at least one Lowercase, Uppercase, Numeric digit and must be under 8 to 15 character || No special character allowed">
+                            <span><i id="pass-strength" class="fa fa-lock" aria-hidden="true"></i></span>
+                            <input type="password" name="password" placeholder="abc XYZ 701" class="user-pass"
+                                id="u-pass" minlength="8" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
+                                required />
+                        </div>
+                    </div>
+                    <button class="btn-form btn-danger btn-block" type="submit" name="sumbit" value="Signup">
+                        Login Now
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="w3l_form">
+                <div class="left_grid_info">
+                    <h3>Registered?</h3>
+                    <br />
+                    <p class="register-text">
+                        So, Here You Can Login Normally Or With Your Google
+                        Facebook Account And These Need Special Permission To Accounts | 
+                        <a class="forgot-link" href="/user/forgot">Forgot Password</a>
+                    </p>
+                    <a href="/user/signup" class="btn-form btn-with-1">Back-to SignUp<i class="fas fa-chevron-right"
+                            aria-hidden="true"></i></a>
+                    <a href="/" class="btn-form btn-with-2">Back-to Home
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
