@@ -24,7 +24,7 @@
     "node": "14.x"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.2.5",
+    "@sendgrid/mail": "^7.3.0",
     "async": "^3.2.0",
     "bad-words": "^3.0.3",
     "bcryptjs": "^2.4.3",
@@ -36,12 +36,12 @@
     "express-session": "^1.17.1",
     "lodash": "^4.17.20",
     "method-override": "^3.0.0",
-    "mongoose": "^5.10.3",
+    "mongoose": "^5.10.10",
     "multer": "^1.4.2",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4",
-    "npm-check-updates": "^8.1.1"
+    "nodemon": "^2.0.6",
+    "npm-check-updates": "^9.2.2"
   }
 }

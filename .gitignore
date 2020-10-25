@@ -1,4 +1,5 @@
 .env
+.jshintrc
 node_modules/
 uploads/*.jpg
 uploads/*.jpeg
