@@ -1,6 +1,6 @@
 {
   "name": "social.forum",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Social Forum App",
   "main": "index.js",
   "scripts": {
@@ -21,27 +21,27 @@
   "author": "Koushik Saha",
   "license": "ISC",
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.3.0",
+    "@sendgrid/mail": "^7.4.5",
     "async": "^3.2.0",
-    "bad-words": "^3.0.3",
+    "bad-words": "^3.0.4",
     "bcryptjs": "^2.4.3",
-    "connect-mongo": "^3.2.0",
+    "connect-mongo": "^4.4.1",
     "cookie-parser": "^1.4.5",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "express-session": "^1.17.1",
-    "lodash": "^4.17.20",
+    "express-session": "^1.17.2",
+    "lodash": "^4.17.21",
     "method-override": "^3.0.0",
-    "mongoose": "^5.10.10",
+    "mongoose": "^5.13.2",
     "multer": "^1.4.2",
-    "socket.io": "^2.3.0"
+    "socket.io": "^4.1.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6",
-    "npm-check-updates": "^9.2.2"
+    "nodemon": "^2.0.9",
+    "npm-check-updates": "^11.8.1"
   }
 }

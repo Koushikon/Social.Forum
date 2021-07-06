@@ -1,6 +1,13 @@
-.env
-.jshintrc
+# Node modules
 node_modules/
+
+# Workspace setup
+.vscode
+
+# Project environments
+.env
+
+# Project filetypes
 uploads/*.jpg
 uploads/*.jpeg
 *.txt

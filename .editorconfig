@@ -1,0 +1,15 @@
+root = true
+
+[*.js]
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+[*.ejs]
+charset = utf-8
+indent_style = space
+indent_size = 3
+
+[package.json]
+indent_style = space
+indent_size = 2
