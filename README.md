@@ -6,7 +6,7 @@ This is the BCA 6th-sem project i'm working on.
 - 🐱‍🏍 [Live][lnk0001] App
 
 ## Setup and run the Project
-### ➕ Add .env file in the root directory
+### ☕ Add .env file in the root directory
 
 ```Plain
     PORT=<Input_PORT>
@@ -20,6 +20,8 @@ This is the BCA 6th-sem project i'm working on.
 
 ---
 
+`package.json`
+
 ### 🍿 (Optional) One file For Run database server locally
 
 - `cd/` -To go root of your drive
@@ -27,12 +29,12 @@ This is the BCA 6th-sem project i'm working on.
 - `<MongoDB_File_with_mongodb_Path> --dbpath=<Your_MongoDB_Data_Path>/`
 - Save now and Run Whenever you need.
 
-### 🍿 One file For Start The Server with view Mode in `package.json`
+### 🍿 One file For Start The Server with view Mode in
 
 - In terminal type `npm run start` to start the server
 - Save now and Run Whenever you need.
 
-### 🍿 One file For Run In Development Mode With #1 [Nodemon] in `package.json`
+### 🍿 One file For Start The Server in Development environment
 
 - In terminal type `npm run dev` to start the server in development environment
 - Save now and Run Whenever you need.

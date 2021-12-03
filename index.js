@@ -1,47 +1,47 @@
-const express = require("express")
-const cookieParser = require("cookie-parser")
-const mongoose = require("mongoose")
-const session = require("express-session")
-const mongoStore = require("connect-mongo")(session)
-const methodOverride = require("method-override")
-const fs = require("fs")
-const path = require("path")
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const mongoose = require("mongoose");
+const session = require("express-session");
+const mongoStore = require("connect-mongo")(session);
+const methodOverride = require("method-override");
+const fs = require("fs");
+const path = require("path");
 
-require('dotenv').config()
+require('dotenv').config();
 
 // Store express configuration on server using app
-const app = express()
+const app = express();
 // Call http library to create an server with express
-const http = require("http").createServer(app)
+const http = require("http").createServer(app);
 
 // Socket.io Require (Here we write Signup & Chat)
-require("./libs/chat.js").sockets(http)
+require("./libs/chat.js").sockets(http);
 
 // DB Configure
-require('./app/config/database')
+require('./app/config/database');
 
 // HTTP Method-Override middleware
 app.use(methodOverride((req, res) => {
   if (req.body && typeof req.body === "object" && "_method" in req.body) {
-      var method = req.body._method
-      delete req.body._method
-      return method
+      var method = req.body._method;
+      delete req.body._method;
+      return method;
   }
 }));
 
 // Setup Static directory to serve up
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
 // For profile images
-app.use('/uploads', express.static('uploads'))
+app.use('/uploads', express.static('uploads'));
 
 // Setup EJS views engine
-app.set("view engine", "ejs")
-app.set("views", path.join(__dirname, "views"))
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
-//parsing middleware
-app.use(express.json({ extended: true }))
-app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser())
+//parsing middlewares
+app.use(express.json({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // Express session
 app.use(session({
@@ -56,23 +56,23 @@ app.use(session({
   cookie: {
     maxAge: 80 * 80 * 800
   }
-}))
+}));
 
 // Mongoose Models Set
 fs.readdirSync("./app/models").forEach((file) => {
   if (file.indexOf(".js")) {
     require("./app/models/" + file);
   }
-})
+});
 
 // Routes set
-app.use('/', require('./app/controller/index'))
-app.use('/user', require('./app/controller/signup'))
-app.use('/user', require('./app/controller/login'))
-app.use('/user', require('./app/controller/forgot'))
-app.use('/dashboard', require('./app/controller/dashboard'))
-app.use('/chat', require('./app/controller/messaging'))
-app.use('/notes', require('./app/controller/notes'))
+app.use('/', require('./app/controller/index'));
+app.use('/user', require('./app/controller/signup'));
+app.use('/user', require('./app/controller/login'));
+app.use('/user', require('./app/controller/forgot'));
+app.use('/dashboard', require('./app/controller/dashboard'));
+app.use('/chat', require('./app/controller/messaging'));
+app.use('/notes', require('./app/controller/notes'));
 
 // Handling 4O4 error
 app.use('*', (req, res) => {
@@ -87,11 +87,11 @@ app.use('*', (req, res) => {
     watermark: '{{ PAGE NOT FOUND }}',
     error: "",
     user: req.session.user
-  })
-})
+  });
+});
 
 // App level middleware for setting logged in user
-const userModel = mongoose.model("User")
+const userModel = mongoose.model("User");
 
 app.use((req, res, next) => {
   if (req.session && req.session.user) {
@@ -107,9 +107,9 @@ app.use((req, res, next) => {
       }
     });
   } else {
-      next()
+      next();
   }
-})
+});
 
-const PORT = process.env.PORT
-http.listen(PORT, console.log(`Server Listen on Port ${PORT}`))
+const PORT = process.env.PORT | 3000;
+http.listen(PORT, console.log(`Server Listen on Port ${PORT}`));
